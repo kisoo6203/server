@@ -13,7 +13,8 @@ public class DBContract {
 		String username = "myfood";
 		String password = "myfood";
 		
-		// 이 프로젝트에서 어딘가에서 이미 dbConn이
+		// 이 프로젝트에서 어딘가에서 이미 dbConn이vb 
+		
 		// 이미 만들어져 있다면 다시 만들지 않기 위한 코드
 		if(dbConn == null) {
 			
