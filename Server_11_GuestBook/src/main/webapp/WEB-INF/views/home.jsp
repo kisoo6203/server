@@ -22,18 +22,76 @@ document.addEventListener("DOMContentLoaded",function(){
 		// 가장 안쪽 tag(TD)의 이름을 가져와라
 		let tag_name = ev.target.tagName;
 		
-		if(tag_name = "TD"){
+		if(tag_name == "TD"){
 			let gb_seq = ev.target.closest("TR").dataset.seq
 			
 			document.location.href="${rootPath}/guest/view?gb_seq=" + gb_seq
 		}
+	}) // table의 click
+	// 방명록 쓰기 button click 시작
+	document.querySelector("button.btn_write").addEventListener("click",function(ev){
+		// alert("방명록쓰기")
+		document.location.href = "${rootPath}/guest/insert"
 	})
-})
+	// 방명록 쓰기 button click end
+	
+}) // 전체
 
 </script>
+<style>
+
+	section#main {
+		width:80%;
+		margin:3px Auto;
+		border:2px solid green;
+		padding:5px;
+		background:linear-gradient(to right,green,white,green,white,green) ;
+		/* rgba를 사용하는 대신 바탕색의 투명도를 지정 */
+		/* rgba(0,255,0, 0.3) */
+		/* opacity: 0.3; */
+	}
+	/*
+	form tag는 block tag type이기 때문에
+	btutton tag는 한 라인에 배치하기 위하여
+	display type inlineblock으로 변환하고
+	width를 제한하여 설정하였다
+	*/
+	section#main form {
+		display : inline-block;
+		width:20%;
+		margin-left : 20px;
+	}
+	section#main input {
+		background-color: white;
+		padding:5px;
+		border-radius: 5px;
+		border:1px solid green;
+		
+	}
+	section#main button {
+		padding : 5px;
+		outline : 0;
+		border: 0;
+		border-radius: 5px;
+		background-color: rgb(80, 42, 185);
+		opacity:1;
+		color:white;
+		
+	}
+	section#main button:hover {
+		box-shadow: 2px 2px 2px rgab(0,0,0,0,0);
+		
+	}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include_nav.jsp" %>
+	<section id="main">
+		<form>
+			<input name="text">
+		</form>
+		<button class="btn_write">방명록 쓰기</button>
+	</section>
 	<table id="gblist">
 		<tr>
 			<th>작성일</th>

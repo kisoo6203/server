@@ -27,7 +27,7 @@ table {
 	margin:10px auto;
 }
 tr {
-	background-color: pink;
+	background: linear-gradient(to right,yellow, red, orange, pink, green, blue, purple, yellow, red, orange, pink, green, blue, purple);
 }
 td,th {
 	border:1px solid green;
